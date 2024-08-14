@@ -1,24 +1,11 @@
 import { useState } from 'react'
+import confetti from 'canvas-confetti'
+import {Square} from './components/square'
 import './App.css'
 
-const TURNS = {X: "X", O: "O"}
+const TURNS = {X: "×", O: "o"}
 
-const Winning_Status = {win: "X" || "O", draw: "Draw", continue: "Continue"}
-
-
-function Square({children, isSelected, updateBoard, index }) {
-  const className = isSelected ? 'square square-selected' : 'square';
-  
-  const handleClick = () => {
-    updateBoard(index);
-  }
-
-  return (
-    <div onClick={handleClick} className={className}>
-      {children}
-    </div>
-  )
-}
+const Winning_Status = {win: "X", draw: "Draw", continue: "Continue"}
 
 // Condición de victoria
 const winningConditions = [
@@ -31,7 +18,6 @@ const winningConditions = [
   [0, 4, 8], // Diagonal
   [2, 4, 6]
 ]
-
 
 function App() {
   //1. Crear un estado para el tablero
@@ -55,8 +41,11 @@ function App() {
     const newWinner = checkWinner(newBoard);
     if(newWinner !== Winning_Status.continue) {
       setWinner(newWinner);
+      setCurrentPlayer(newWinner);
+      confetti();
     }else if(newBoard.every(cell => cell)) {
       setWinner(Winning_Status.draw);
+      setCurrentPlayer(Winning_Status.draw);
     }
   }
   //5. Crear una función para verificar si hay un ganador
@@ -69,7 +58,12 @@ function App() {
     }
     return Winning_Status.continue;
   }
-
+  //6. Crear una función para reiniciar el juego
+  const resetGame = () => {
+    setBoard(Array(9).fill(null));
+    setCurrentPlayer(TURNS.X);
+    setWinner(Winning_Status.continue);
+  }
 
 
 
@@ -95,15 +89,19 @@ function App() {
       </section>
       <section >
         {
-          winner != Winning_Status.draw &&
+          winner != Winning_Status.continue &&
           <section>
-            <h2>
+            <h2 className='winner-text'>
               {
-                winner === Winning_Status.draw ? "Empate" : `El Ganado es: ${winner}`              }
+                winner === Winning_Status.draw ? "Empate" : `El Ganador es: ${winner}`               
+              }
             </h2>
           </section>
         }
       </section>
+      <footer>
+        <button onClick={resetGame}>Comenzar de Nuevo</button>
+      </footer>
     </main>
   )
 }
