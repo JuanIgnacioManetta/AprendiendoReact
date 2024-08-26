@@ -21,9 +21,15 @@ const winningConditions = [
 
 function App() {
   //1. Crear un estado para el tablero
-  const [board, setBoard] = useState(Array(9).fill(null))
+  const [board, setBoard] = useState(() => {
+    const boardFromLocalStorage = window.localStorage.getItem('board'); // Obtiene el tablero del Local Storage
+    return boardFromLocalStorage ? JSON.parse(boardFromLocalStorage) : Array(9).fill(null); // Si hay un tablero en Local Storage, lo retorna, sino retorna un tablero vacío
+  })
   //2. Crear un estado para el jugador actual
-  const [currentPlayer, setCurrentPlayer] = useState(TURNS.X)
+  const [currentPlayer, setCurrentPlayer] = useState(() => {
+    const currentPlayerFromLocalStorage = window.localStorage.getItem('currentPlayer'); // Obtiene el jugador actual del Local Storage
+    return currentPlayerFromLocalStorage ? JSON.parse(currentPlayerFromLocalStorage) : TURNS.X; // Si hay un jugador actual en Local Storage, lo retorna, sino retorna el jugador X
+  })
   //3. Crear un estado para el ganador
   const [winner, setWinner] = useState(Winning_Status.continue)
   //4. Crear una función para actualizar el tablero
@@ -37,12 +43,15 @@ function App() {
     // Cambiar de turno
     const newTurn = currentPlayer === TURNS.X ? TURNS.O : TURNS.X;
     setCurrentPlayer(newTurn);
+    // Guarda Partida en Local Storage
+    window.localStorage.setItem('board', JSON.stringify(newBoard)); // Guarda el tablero
+    window.localStorage.setItem('currentPlayer', JSON.stringify(newTurn)); // Guarda el jugador actual
     // Verificar si hay un ganador
     const newWinner = checkWinner(newBoard);
     if(newWinner !== Winning_Status.continue) {
-      setWinner(newWinner);
-      setCurrentPlayer(newWinner);
-      confetti();
+      setWinner(newWinner); 
+      setCurrentPlayer(newWinner); 
+      confetti(); // Lanza confetti
     }else if(newBoard.every(cell => cell)) {
       setWinner(Winning_Status.draw);
       setCurrentPlayer(Winning_Status.draw);
@@ -63,6 +72,8 @@ function App() {
     setBoard(Array(9).fill(null));
     setCurrentPlayer(TURNS.X);
     setWinner(Winning_Status.continue);
+    window.localStorage.removeItem('board'); // Elimina el tablero del Local Storage
+    window.localStorage.removeItem('currentPlayer'); // Elimina el jugador actual del Local Storage
   }
 
 
