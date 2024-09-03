@@ -1,0 +1,16 @@
+:root {
+  --color-red: #e10600;
+  --color-red-dark: #9f1007;
+  --color-white: #f3f3f3;
+  --color-black: #090909;
+  --color-grey: #bcb8b1;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  background-color: var(--color-red);
+}
