@@ -1,8 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 .cargando,.error{
     display: flex;
     justify-content: center;
@@ -17,7 +12,7 @@
     width: 100%;
 }
 
-.pilots-container-podium,.pilots-container-rest{
+.constructors-container-podium,.constructors-container-rest{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -26,10 +21,6 @@
     margin: 0 10px;
 }
 
-.pilots-container-podium{
+.constructors-container-podium{
     margin: 10px;
-}
-
-a:hover{
-    scale: 1.1;
 }

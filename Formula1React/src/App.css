@@ -7,10 +7,5 @@
 }
 
 *{
-  margin: 0;
-  padding: 0;
-}
-
-header{
-  background-color: var(--color-red);
+  font-family: Orbitron, sans-serif;
 }

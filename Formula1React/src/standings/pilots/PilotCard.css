@@ -1,0 +1,254 @@
+:root {
+    --color-red: #e10600;
+    --color-red-dark: #9f1007;
+    --color-white: #f3f3f3;
+    --color-black: #090909;
+    --color-grey: #bcb8b1;
+}
+
+/* Estilo para el anchor del pilot card */
+.pilotCard-a{
+    text-decoration: none;
+    color: inherit;
+    margin: 10px;
+}
+
+.pilotCard-a:hover{
+    scale: 1.1;
+}
+
+/*  */
+
+.pilotCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f5f5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    height: 200px;
+    width: 350px;
+}
+
+.pilotCard__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Estilo para la imagen del piloto */
+
+.pilotCard__imageWrapper{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #dfdfdf;
+}
+
+.pilotCard__image{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Estilo para la info del piloto */
+
+.pilotCard__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 60%;
+}
+
+.pilotCard__infoPosition{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.pilotCard__position{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+}
+
+.pilotCard__pointsWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.pilotCard__points{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+}
+
+.pilotCard__pointsDiff{
+    font-size: 15px;
+    font-family: Orbitron, sans-serif;
+}
+
+/* Estilo para el nombre y nacionalidad del piloto */
+
+.pilotCard__infoName{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pilotCard__name{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+}
+
+.pilotCard__nationality{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.pilotCard__flag{
+    width: 50px;
+    height: 50px;
+}
+
+.pilotCard__nationalityName{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+}
+
+/* Estilo para el footer del piloto */
+
+.pilotCard__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.pilotCard__team{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+}
+
+/* Colores para el nombre del equipo */
+
+.pilotCard_team__Red {
+    border-left: 5px solid #1e41ff;
+    padding-left: 5px;
+}
+.pilotCard_team__Ferrari {
+    border-left: 5px solid #dc0000;
+    padding-left: 5px;
+}
+.pilotCard_team__McLaren {
+    border-left: 5px solid #ff8700;
+    padding-left: 5px;
+}
+.pilotCard_team__Mercedes {
+    border-left: 5px solid #00d2be;
+    padding-left: 5px;
+}
+.pilotCard_team__Aston {
+    border-left: 5px solid #006f62;
+    padding-left: 5px;
+}
+.pilotCard_team__RB {
+    border-left: 5px solid #1e41ff;
+    padding-left: 5px;
+}
+.pilotCard_team__Haas {
+    border-left: 5px solid var(--color-black);
+    padding-left: 5px;
+}
+.pilotCard_team__Alpine {
+    border-left: 5px solid #d55a94;
+    padding-left: 5px;
+}
+.pilotCard_team__Williams {
+    border-left: 5px solid #005aff;
+    padding-left: 5px;
+}
+.pilotCard_team__Sauber {
+    border-left: 5px solid #52e252;
+    padding-left: 5px;
+}
+
+.pilotCard__number{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Orbitron, sans-serif;
+}
+
+/* Colores para el numero del piloto */
+
+.pilotCard__number__Red {
+    color: var(--color-red);
+    text-shadow: -1px -1px 0 #1e41ff, 1px -1px 0 #1e41ff, -1px 1px 0 #1e41ff,
+      1px 1px 0 #1e41ff;
+}
+.pilotCard__number__Ferrari {
+    color: #dc0000;
+    text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
+      -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black);
+} 
+.pilotCard__number__McLaren {
+    color: #ff8700;
+    text-shadow: -1px -1px 0 #005aff, 1px -1px 0 #005aff, -1px 2px 0 #005aff,
+      1px 1px 0 #005aff;
+} 
+.pilotCard__number__Mercedes {
+    color: #00d2be;
+    text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
+      -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black);
+}
+.pilotCard__number__Aston {
+    color: #006f62;
+    text-shadow: -1px -1px 0 #f3f3f3, 1px -1px 0 #f3f3f3, -1px 1px 0 #f3f3f3,
+      1px 1px 0 #f3f3f3;
+}
+.pilotCard__number__RB {
+    color: #1e41ff;
+    text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
+      -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black);
+} 
+.pilotCard__number__Haas {
+    color: var(--color-black);
+    text-shadow: -1px -1px 0 var(--color-white), 1px -1px 0 var(--color-white),
+      -1px 1px 0 var(--color-white), 1px 1px 0 var(--color-white);
+}
+.pilotCard__number__Alpine {
+    color: var(--color-white);
+    text-shadow: -1px -1px 0 #d55a94, 1px -1px 0 #d55a94, -1px 1px 0 #d55a94,
+      1px 1px 0 #d55a94;
+} 
+.pilotCard__number__Williams {
+    color: var(--color-white);
+    text-shadow: -1px -1px 0 #005aff, 1px -1px 0 #005aff, -1px 1px 0 #005aff,
+      1px 1px 0 #005aff;
+} 
+.pilotCard__number__Sauber {
+    color: var(--color-white);
+    text-shadow: -1px -1px 0 #52e252, 1px -1px 0 #52e252, -1px 1px 0 #52e252,
+      1px 1px 0 #52e252;
+}

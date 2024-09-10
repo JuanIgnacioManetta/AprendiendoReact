@@ -1,5 +1,6 @@
-import PilotCard from './PilotCard'; // Importamos el componente PilotCard
-import StandingsError from '../errors/StandingsError';
+import PilotCard from './PilotCard.jsx'
+import StandingsError from '../../errors/StandingsError';
+
 
 import flagMap from './FlagMap'; // Importamos el objeto flagMap
 import PilotImgMap from './PilotImgMap'; // Importamos el objeto PilotImgMap
@@ -58,12 +59,12 @@ function PilotsList() {
                         className='pilot-card-podium'
                         position={pilot.position}
                         points={pilot.points}
-                        diference={`+${pointsFirst - pilot.points}`}
+                        difference={`+${pointsFirst - pilot.points}`}
                         name={`${pilot.Driver.givenName} ${pilot.Driver.familyName}`}
                         flagSrc={flagMap[pilot.Driver.nationality]}
-                        flagAlt={`${pilot.Driver.nationality} flag`}
+                        nationality={pilot.Driver.nationality}
                         team={pilot.Constructors[0].name}
-                        number={pilot.Driver.permanentNumber}
+                        number={pilot.position == 1 ? 1 : pilot.Driver.permanentNumber}
                         pilotImgSrc={PilotImgMap[pilot.Driver.familyName]}
                     />
                 ))}
@@ -77,10 +78,10 @@ function PilotsList() {
                         className='pilot-card-rest'
                         position={pilot.position}
                         points={pilot.points}
-                        diference={`+${pointsFirst - pilot.points}`}
+                        difference={`+${pointsFirst - pilot.points}`}
                         name={`${pilot.Driver.givenName} ${pilot.Driver.familyName}`}
                         flagSrc={flagMap[pilot.Driver.nationality.trim()]}
-                        flagAlt={`${pilot.Driver.nationality} flag`}
+                        nationality={pilot.Driver.nationality}
                         team={pilot.Constructors[0].name}
                         number={pilot.Driver.permanentNumber}
                         pilotImgSrc={PilotImgMap[pilot.Driver.familyName.trim()]}

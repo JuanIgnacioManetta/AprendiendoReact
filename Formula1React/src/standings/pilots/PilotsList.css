@@ -1,0 +1,26 @@
+.cargando,.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.standings-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.pilots-container-podium,.pilots-container-rest{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 10px;
+}
+
+.pilots-container-podium{
+    margin: 10px;
+}
