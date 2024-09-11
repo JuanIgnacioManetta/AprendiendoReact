@@ -6,31 +6,26 @@
     --color-grey: #bcb8b1;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-}
-
-button{
+.boton{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: fit-content;
+    width: 250px;
     padding: 20px;
     border: 5px solid var(--color-black);
-    margin: 0 10px;
+    margin: 10px;
     border-radius: 10px;
     background-color: var(--color-red);
 }
 
-button p{
+.boton p{
     color: var(--color-white);
     letter-spacing: 3px;
     font-size: 1.5rem;
 }
 
-button:hover{
+.boton:hover{
     scale: 1.05;
     cursor: pointer;
 }

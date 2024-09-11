@@ -5,7 +5,7 @@ import './PilotCard.css';
 
 function PilotCard({position , points, difference, name, flagSrc, nationality, team, number, pilotImgSrc}) {
     return (
-        <a className="pilotCard-a" href="">
+        <a className="pilotCard-a" href="#">
             <div className="pilotCard">
                 <div className="pilotCard__header">
                     <div className="pilotCard__imageWrapper">
@@ -22,7 +22,9 @@ function PilotCard({position , points, difference, name, flagSrc, nationality, t
                         <div className="pilotCard__infoName">
                             <span className="pilotCard__name">{name}</span>
                             <div className="pilotCard__nationality">
-                                <img className="pilotCard__flag" src={flagSrc} alt={`${nationality} flag`} />
+                                <div className="pilotCard__flagWrapper">
+                                    <img className="pilotCard__flag" src={flagSrc} alt={`${nationality} flag`} />
+                                </div>
                                 <span className="pilotCard__nationalityName">{nationality}</span>
                             </div>
                         </div>

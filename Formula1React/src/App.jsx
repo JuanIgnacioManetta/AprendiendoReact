@@ -14,10 +14,18 @@ function App() {
     return(
       <>
         <HeaderMenu setVistaActual={setVistaActual} vistaActual={vistaActual}/>
-
-        {
-          vistaActual === 'pilotos' ? <PilotsList/> : <ConstructorsList/>
-        }
+        <main>
+          {
+            vistaActual === 'pilotos' ? 
+            <PilotsList/> : 
+            vistaActual === 'constructores' ? 
+            <ConstructorsList/> : 
+            vistaActual === 'calendario' ? 
+            <h1>Calendario</h1> : 
+            vistaActual === 'resultados' ?
+            <h1>Resultados</h1> : ""
+          }
+        </main>
       </>
     )
 }
